@@ -28,7 +28,7 @@ Pod::Spec.new do |p|
   }
   p.requires_arc                = true
   p.source                      = {
-    :http => "https://github.com/gongfeng98/lynx/releases/tag/0.0.1-alpha.10",
+    :http => "https://github.com/gongfeng98/lynx/releases/download/0.0.1-alpha.10/Lynx-dev.zip",
   }
   p.summary                     = "The framework of Lynx."
   p.version                     = "3.3.0-alpha.2-dev"
