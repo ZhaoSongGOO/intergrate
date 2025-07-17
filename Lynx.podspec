@@ -3397,19 +3397,9 @@ Pod::Spec.new do |p|
         "GCC_PREPROCESSOR_DEFINITIONS" => "ENABLE_TESTBENCH_RECORDER=1"
       }
     end
-    end
-  end
 
-  p.subspec "ReleaseResource" do |sp|
-    sp.resource_bundles           = {
-      "LynxResources" => [
-                           "lynx/platform/darwin/ios/JSAssets/release/lynx_core.js"
-                         ]
-    }
-  end
-
-  p.subspec "Replay" do |sp|
-    sp.private_header_files       = "lynx/core/services/replay/layout_tree_testbench.h", 
+    sp.subspec "Replay" do |ssp|
+      ssp.private_header_files       = "lynx/core/services/replay/layout_tree_testbench.h", 
                                     "lynx/core/services/replay/lynx_callback_testbench.h", 
                                     "lynx/core/services/replay/lynx_module_binding_testbench.h", 
                                     "lynx/core/services/replay/lynx_module_manager_testbench.h", 
@@ -3418,7 +3408,7 @@ Pod::Spec.new do |p|
                                     "lynx/core/services/replay/testbench_test_replay.h", 
                                     "lynx/core/services/replay/testbench_utils_embedder.h"
 
-    sp.source_files               = "lynx/core/services/replay/layout_tree_testbench.cc", 
+      ssp.source_files               = "lynx/core/services/replay/layout_tree_testbench.cc", 
                                     "lynx/core/services/replay/layout_tree_testbench.h", 
                                     "lynx/core/services/replay/lynx_callback_testbench.cc", 
                                     "lynx/core/services/replay/lynx_callback_testbench.h", 
@@ -3435,10 +3425,19 @@ Pod::Spec.new do |p|
                                     "lynx/core/services/replay/testbench_utils_embedder.cc", 
                                     "lynx/core/services/replay/testbench_utils_embedder.h"
 
-    sp.pod_target_xcconfig        = {
+      ssp.pod_target_xcconfig        = {
       "GCC_PREPROCESSOR_DEFINITIONS" => "ENABLE_TESTBENCH_REPLAY=1"
     }
-    sp.dependency                 "Lynx/Framework"
+    end
+    end
+  end
+
+  p.subspec "ReleaseResource" do |sp|
+    sp.resource_bundles           = {
+      "LynxResources" => [
+                           "lynx/platform/darwin/ios/JSAssets/release/lynx_core.js"
+                         ]
+    }
   end
 
   p.subspec "UnitTestResource" do |sp|
