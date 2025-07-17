@@ -3429,7 +3429,6 @@ Pod::Spec.new do |p|
       "GCC_PREPROCESSOR_DEFINITIONS" => "ENABLE_TESTBENCH_REPLAY=1"
     }
     end
-    end
   end
 
   p.subspec "ReleaseResource" do |sp|
